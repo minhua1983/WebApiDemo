@@ -10,7 +10,7 @@
 在webapi中拦截只需自定义DelegatingHandler，即继承DelegatingHandler，然后覆写其SendAsync方法即可（可以在此方法中加上权限认证，写日志）。
 
 ## 以owin规范为自宿主
-其实和上面逻辑差不多，不走iis就意味着少了上面的HttpApplication的19个管道事件。一般以owin规范为自宿主的程序，实际就是按Microsoft.Owin.Host.HttpListener来处理请求。
+其实和上面逻辑差不多，不走iis就意味着少了上面的HttpApplication的19个管道事件和一些和iis相关的处理逻辑。一般以owin规范为自宿主的程序，实际就是按Microsoft.Owin.Host.HttpListener来处理请求。
 实现owin规范的第三方框架不少：
 * ServiceStack
 * WebApi
